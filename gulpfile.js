@@ -15,7 +15,7 @@ function browsersync() {
         server: {
             baseDir: "app/"
         },
-        notify: false
+        notify: false,
     });
 }
 
@@ -73,7 +73,7 @@ function cleanDist() {
 
 function watching() {
     watch(['app/scss/**/*.scss'], styles);
-    watch(['app/js/**/*.js', 'app/js/main.min.js'], scripts);
+    watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
@@ -85,4 +85,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles,scripts,watching);
