@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "@fancyapps/ui": "^4.0.25"
+    "@fancyapps/ui": "^4.0.25",
+    "rateyo": "^2.3.2"
   }
 }
